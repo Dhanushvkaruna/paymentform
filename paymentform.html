@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment form</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    /* Form field styling */
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    label.card {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    /* Submit button */
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    h1{
+        text-align: center;
+    }
+    
+</style>
+</head>
+<body>
+    <form action="updated.html">
+    <h1>Payment form</h1>
+    <p>required field is mandatary *</p>
+    <h2>Contact Information</h2>
+    <p>Name* <input type="text" required name="name"required></p>
+    <fieldset>
+        <p>
+            Male* <input type="radio" name="Gender" id="Male" required>
+            Female* <input type="radio" name="Gender" id="Female" required>
+        </p>
+    </fieldset>
+    <p>
+        address <textarea name="address" id="address" cols="100" rows="8"></textarea>
+        Email <input type="email" name="Email" id="Email">
+        Pincode <input type="number" name="Pincode" id="Pincode">
+    </p>
+    <h2>payment Information</h2>
+    <p>Card Type:*
+        <select name="Card-Type" id="Card-Type">
+            <option value="">--Select Card-Type--</option>
+            <option value="Visa">Visa</option>
+            <option value="rupay">rupay</option>
+            <option value="mastercard">mastercard</option>
+        </select>
+    </p>
+    <p>Card.Number* <input type="number" name="Card.Number" id="Card.Number"required></p>
+    <p>Expiry date* <input type="number" name="Expiry date" id="Expiry date"required></p>
+    <p>CVV Number* <input type="password" name="CVV Number" id="CVV Number"></p>
+    <input type="submit" value="Pay Now">
+    </form>
+    <script>
+    const expDateInput = document.getElementById('exp-date');
+
+    expDateInput.addEventListener('input', () => {
+    // Check and validate the expiration date
+    const currentDate = new Date();
+    const enteredDate = new Date(expDateInput.value);
+
+    if (enteredDate < currentDate) {
+        // Display an error message
+    }
+    });
+
+    const submitButton = document.getElementById('submit-button');
+    const spinner = document.getElementById('spinner');
+
+    paymentForm.addEventListener('submit', () => {
+    // Show a loading spinner while processing
+    spinner.style.display = 'block';
+
+    // Implement payment processing logic
+    });
+    </script>
+</body>
+</html>
